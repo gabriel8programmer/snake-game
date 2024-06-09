@@ -1,0 +1,64 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+i {
+  pointer-events: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: "Press Start 2P";
+  background: #ddd;
+  color: #000;
+}
+
+h1 {
+  margin-top: 1.5rem;
+  color: #519a00;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+.container-buttons {
+  display: grid;
+  gap: .5rem;
+  grid-template-columns: repeat(3, 5rem);
+  grid-template-rows: repeat(2, 5rem);
+}
+
+.container-buttons button {
+  background: 0;
+  font-size: 1.75rem;
+  border: 2px solid #519a00;
+  color: #519a00;
+  border-radius: .5rem;
+  grid-row: 2;
+}
+.container-buttons button:active {
+  background: #519a00;
+  color: #fff;
+}
+.container-buttons button i{
+  text-shadow: 1px 1px 2px #fff;
+}
+.container-buttons button:nth-child(1){
+  grid-row: 1;
+  grid-column: 2;
+}
+
+.arrow.hide {
+  display: none;
+}
+#play-again {
+  grid-column: 2;
+  grid-row: 1;
+}
+#play-again.hide {
+  display: none;
+}
