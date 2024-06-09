@@ -203,6 +203,7 @@ class Game {
     if (this.gameover){
       //draw gameover
       this.score = 0;
+      this.speed = 120;
       const gameover = this.drawText("GAMEOVER", 40, "Press Start 2P", "#a00", this.width/2, this.height/2 - 20);
       this.drawText("Press Enter to play again!", 24, "Arial", "#ff0", this.width/2, this.height/2 + gameover.h - 20);
       clearInterval(this.loop);
