@@ -15,8 +15,8 @@ body {
   align-items: center;
   gap: 1.5rem;
   font-family: "Press Start 2P";
-  background: #ddd;
-  color: #000;
+  background: #333;
+  color: #fff;
 }
 
 h1 {
