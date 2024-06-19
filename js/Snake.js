@@ -100,7 +100,7 @@ class Snake {
   checkCollideItSelf(){
     const head = this.snake[0];
     this.die = this.snake.find((part, i) => {
-      if (i === 0) return false
+      if (i <= 2) return false
       const headString = JSON.stringify(head);
       const partString = JSON.stringify(part);
       return (partString === headString);
