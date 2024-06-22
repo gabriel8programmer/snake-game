@@ -5,7 +5,7 @@ class Game {
   constructor() {
     //constants game
     this.stage = document.querySelector("#stage");
-    this.ts = 20; //tile size
+    this.ts = 15; //tile size
     this.cols = 20;
     this.rows = 20;
     this.width;
