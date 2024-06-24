@@ -1,6 +1,6 @@
 
 class Snake {
-  constructor({x, y, w, h, c}){
+  constructor(x, y, w, h, c){
     this.x = x;
     this.y = y;
     this.w = w;
@@ -22,14 +22,6 @@ class Snake {
         x: this.x,
         y: this.y
       },
-      {
-        x: this.x,
-        y: this.y + (this.h)
-      },
-      {
-        x: this.x,
-        y: this.y + (this.h*2)
-      }
     ];
     
   }

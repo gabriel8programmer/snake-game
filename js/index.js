@@ -1,5 +1,5 @@
 
-import Game from "./Game.js";
+import Game from "./GameObj.js";
 
 //instance the game and it start
 const game = new Game();

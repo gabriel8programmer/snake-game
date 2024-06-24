@@ -28,29 +28,29 @@ class Game {
 
   start() {
     //define width and height Game
-    this.stage.width = this.cols * this.ts;
-    this.stage.height = this.rows * this.ts;
+    this.width = this.cols * this.ts;
+    this.height = this.rows * this.ts;
+    this.stage.width = this.width;
+    this.stage.height = this.height;
     this.ctx = this.stage.getContext("2d");
-    this.width = this.stage.width;
-    this.height = this.stage.height;
 
     //create the instance of the fruit
-    this.fruit = new Fruit({
-      x: Math.floor(Math.random() * this.cols) * this.ts,
-      y: Math.floor(Math.random() * this.rows) * this.ts,
-      w: this.ts,
-      h: this.ts,
-      c: "#a00"
-    });
+    this.fruit = new Fruit(
+      Math.floor(Math.random() * this.cols) * this.ts,
+      Math.floor(Math.random() * this.rows) * this.ts,
+      this.ts,
+      this.ts,
+      "#a00"
+    );
 
     //create the instance of the snake
-    this.snake = new Snake({
-      x: this.cols / 2 * this.ts,
-      y: (this.rows - 4) * this.ts,
-      w: this.ts,
-      h: this.ts,
-      c: "#0a0"
-    });
+    this.snake = new Snake(
+      this.cols / 2 * this.ts,
+      (this.rows - 4) * this.ts,
+      this.ts,
+      this.ts,
+      "#0a0"
+    );
 
     //update the screen
     this.loop = setInterval(this.update.bind(this), this.speed);
@@ -127,12 +127,16 @@ class Game {
     this.running = true;
     if (key === "ArrowRight" && this.snake.vx === 0) {
       this.snake.setvx(1);
+      this.update();
     } else if (key === "ArrowLeft" && this.snake.vx === 0) {
       this.snake.setvx(-1);
+      this.update();
     } else if (key === "ArrowDown" && this.snake.vy === 0) {
       this.snake.setvy(1);
+      this.update();
     } else if (key === "ArrowUp" && this.snake.vy === 0) {
       this.snake.setvy(-1);
+      this.update();
     }
     
     //gameover
